@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cárdapio dos Sonhos</title>
+  <style>
+    /* Estilos gerais */
+    body {
+        font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      color: #fff;
+    }
+    #image-fundo{
+        background-image: url('fot1.jpg'); /* Substitua 'sua-imagem-de-fundo.jpg' pelo caminho da sua imagem */
+        font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      color: #fff;
+      width: 100vw;
+      opacity: 0.7;
+    }
+    .card{
+        height: 40vh;
+        width: 80%;
+        background-color: #fff;
+        position: absolute;
+        border-radius: 20px;
+        opacity: 0.95;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Estilos para o botão principal */
+    #btn-experiencia {
+      background-color: #ff7eb9; /* Rosa mais intenso para o botão */
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 25px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      margin-bottom: 20px;
+      position:absolute;
+      width: 70%;
+      height: 5vh;
+      border-radius: 20px;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5)
+    }
+
+    #btn-experiencia:hover {
+      background-color: #ff5b99; /* Mudança de cor no hover */
+
+    }
+
+    /* Estilos para a mensagem surpresa */
+    .hidden {
+      display: none;
+    }
+
+    #mensagem-surpresa {
+      text-align: center;
+      margin-top: 20px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #mensagem-surpresa h1 {
+      font-size: 24px;
+      color: #ff7eb9; /* Rosa para o título */
+    }
+
+    input[type="file"] {
+      margin-top: 10px;
+    }
+
+    #btn-enviar {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #ff7eb9; /* Rosa para o botão enviar */
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #btn-enviar:hover {
+      background-color: #ff5b99; /* Mudança de cor no hover */
+    }
+
+    /* Estilos para a área de visualização da imagem */
+    #imagem-preview {
+      max-width: 100px;
+      max-height: 100px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+    <div id="image-fundo">
+    </div>
+    <div class="card">
+
+    </div>
+    <button id="btn-experiencia"><strong>Quer viver a melhor experiência da sua vida?</strong></button>
+    <div class="mensagem-surpresa hidden" id="mensagem-surpresa">
+      <h1>Quer namorar comigo?</h1>
+      <input type="file" id="foto1" accept="image/*" onchange="visualizarImagem(event)">
+      <input type="file" id="foto2" accept="image/*" onchange="visualizarImagem(event)">
+      <div id="imagem-preview"></div>
+      <button id="btn-enviar">Enviar</button>
+  </div>
+  <script>
+    function visualizarImagem(event) {
+      const input = event.target;
+      const reader = new FileReader();
+
+      reader.onload = function() {
+        const imagemPreview = document.getElementById('imagem-preview');
+        imagemPreview.innerHTML = `<img src="${reader.result}" alt="Imagem Anexada">`;
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+
+    // Obtendo o botão e a mensagem surpresa
+    const btnExperiencia = document.getElementById('btn-experiencia');
+    const mensagemSurpresa = document.getElementById('mensagem-surpresa');
+
+    // Adicionando um evento de clique ao botão
+    btnExperiencia.addEventListener('click', function() {
+      // Exibindo a mensagem surpresa
+      mensagemSurpresa.classList.remove('hidden');
+    });
+
+    // Manipulando o evento de clique para o botão de enviar
+    document.getElementById('btn-enviar').addEventListener('click', function() {
+      const foto1 = document.getElementById('foto1').files[0];
+      const foto2 = document.getElementById('foto2').files[0];
+
+      // Aqui você pode fazer o que desejar com as fotos, como enviar para algum lugar, etc.
+
+      alert('Pedido de namoro enviado com as fotos! Aguarde a resposta.');
+    });
+  </script>
+</body>
+</html>
+
