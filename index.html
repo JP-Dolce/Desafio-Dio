@@ -45,7 +45,7 @@
     }
 
     /* Estilos para o botão principal */
-    #btn-experiencia {
+    .btn-experiencia {
       background-color: #ff7eb9; /* Rosa mais intenso para o botão */
       color: white;
       border: none;
@@ -62,7 +62,7 @@
       box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5)
     }
 
-    #btn-experiencia:hover {
+    .btn-experiencia:hover {
       background-color: #ff5b99; /* Mudança de cor no hover */
 
     }
@@ -120,7 +120,9 @@
     <div class="card">
 
     </div>
-    <button id="btn-experiencia"><strong>Quer viver a melhor experiência da sua vida?</strong></button>
+    <a href="./mainPage.html" class="btn-experiencia">
+    <button class="btn-experiencia"><strong>viver a melhor experiência da sua vida?</strong></button>
+    </a>
     <div class="mensagem-surpresa hidden" id="mensagem-surpresa">
       <h1>Quer namorar comigo?</h1>
       <input type="file" id="foto1" accept="image/*" onchange="visualizarImagem(event)">
