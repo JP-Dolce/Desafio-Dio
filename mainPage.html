@@ -1,25 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedido</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+
     <style>
-        .card {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
-            max-width: 400px; 
-            margin: 0 auto; 
+      body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        #back-img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.9;
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .card2 {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 400px;
+            z-index: 1;
+            margin-bottom: 20px; /* Espaço entre o card e o vídeo */
+        }
+
+        #meuVideo {
+            width: 100%;
+            height: 95%;
+        }
+
+        .divider {
+            width: 80%;
+            height: 2px;
+            background-color: #000;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #000000;
         }
 
         .title {
-            width: 100%;
             padding: 10px;
             border-radius: 20px 20px 0 0;
             color: black;
@@ -27,13 +70,12 @@
         }
 
         .button-container {
-            width: 90%;
             display: flex;
             justify-content: space-between;
         }
 
         button {
-            width: 48%; /* Define a largura para que os botões não ocupem toda a largura */
+            width: 48%;
             padding: 15px 30px;
             font-size: 16px;
             border: none;
@@ -42,25 +84,33 @@
         }
 
         #btnSim {
-            background-color: #FF69B4; /* Cor rosa para o botão "Sim" */
+            background-color: #8b000c;
             color: white;
         }
 
         #btnNao {
-            background-color: #808080; /* Cor cinza para o botão "Não" */
+            background-color: #dcdcdc;
             color: white;
         }
     </style>
 </head>
+
 <body>
-    <img src="love_.jpg" id="back-img" alt="Imagem de Fundo" />
-    <div class="card">
-        <div class="title">
-            <h1>Quer namorar comigo?</h1>
+    <div class="container">
+        <div><img src="fot1.png" id="back-img" alt="Imagem de Fundo" /></div>
+        <div class="card2">
+            <div class="title">
+                <h2><strong>Quer namorar comigo?</strong></h2>
+            </div>
+            <div class="button-container">
+                <button id="btnSim" onclick="resposta('sim')">Sim</button>
+                <button id="btnNao" onclick="resposta('nao')">Não</button>
+            </div>
         </div>
-        <div class="button-container">
-            <button id="btnSim" onclick="resposta('sim')">Sim</button>
-            <button id="btnNao" onclick="resposta('nao')">Não</button>
+        <div>
+            <video id="meuVideo" width="640" height="360" controls>
+                <source src="video.mp4" type="video/mp4">
+            </video>
         </div>
     </div>
 
@@ -74,4 +124,5 @@
         }
     </script>
 </body>
+
 </html>
