@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+            max-width: 400px; 
+            margin: 0 auto; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            width: 100%;
+            padding: 10px;
+            border-radius: 20px 20px 0 0;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            width: 48%; /* Define a largura para que os botões não ocupem toda a largura */
+            padding: 15px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #btnSim {
+            background-color: #FF69B4; /* Cor rosa para o botão "Sim" */
+            color: white;
+        }
+
+        #btnNao {
+            background-color: #808080; /* Cor cinza para o botão "Não" */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <img src="love_.jpg" id="back-img" alt="Imagem de Fundo" />
+    <div class="card">
+        <div class="title">
+            <h1>Quer namorar comigo?</h1>
+        </div>
+        <div class="button-container">
+            <button id="btnSim" onclick="resposta('sim')">Sim</button>
+            <button id="btnNao" onclick="resposta('nao')">Não</button>
+        </div>
+    </div>
+
+    <script>
+        function resposta(opcao) {
+            if (opcao === 'sim') {
+                alert('Parabéns! 🥳 Aceito namorar com você!');
+            } else if (opcao === 'nao') {
+                alert('Essa opção não está disponível');
+            }
+        }
+    </script>
+</body>
+</html>
